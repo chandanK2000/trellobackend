@@ -1,0 +1,131 @@
+POST http://localhost:4001/api/accounts/register
+Content-Type: application/json
+
+{
+  "firstName": "Hari",
+  "lastName": "Doe",
+  "email": "harikumar@gmail.com",
+  "password": "hari",
+  "confirmPassword": "hari"
+
+}
+
+###
+POST http://localhost:4001/api/accounts/login
+Content-Type: application/json
+
+{
+  "email": "harikumar@gmail.com",
+  "password":"hari"
+}
+
+
+
+
+
+//update registred user
+###
+PUT http://localhost:4001/api/accounts/edit/669fa091e89c20ee814ce779
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2OWZhMDkxZTg5YzIwZWU4MTRjZTc3OSIsImZpcnN0TmFtZSI6InJhbWFua3VtYXIiLCJsYXN0TmFtZSI6IkRvZSIsImVtYWlsIjoicmFtYW5rdW1hckBnbWFpbC5jb20iLCJpYXQiOjE3MjE3Mzc5MDYsImV4cCI6MTcyMTc0MTUwNn0.yy8FYcE7MU4BBF9X336yDwaQy-aYIVRwUfV10VkRTks
+Content-Type: application/json
+
+{
+  "firstName": "NewFirstName",
+  "lastName": "bhai",
+  "email": "newemail@example.com",
+  "password": "newpassword", 
+  "bio": "New bio",
+  "nation": "New Nation",
+  "gender": "New Gender",
+  "image": "newimageurl",
+  "profession": "New Profession",
+  "address": "New Address"
+}
+
+
+//for the registered delete 
+###
+DELETE http://localhost:4001/api/accounts/delete/669f9bd608e6ce3019c69d7c
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2OWY5YmQ2MDhlNmNlMzAxOWM2OWQ3YyIsImZpcnN0TmFtZSI6ImFtYW4iLCJsYXN0TmFtZSI6IkRvZSIsImVtYWlsIjoiYW1hbkBnbWFpbC5jb20iLCJpYXQiOjE3MjE3Mzc2NjEsImV4cCI6MTcyMTc0MTI2MX0.5k0IL91LqH4JXx6HyHUR44IkUcyTFmxjQE2p3M67J3M
+
+
+
+
+//for create tasks 
+###
+POST http://localhost:4001/api/tasks/create
+Authorization:Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2OWZiMjU0Mjc3YmY2NDhjMDk2MDU4NCIsImZpcnN0TmFtZSI6IkhhcmkiLCJsYXN0TmFtZSI6IkRvZSIsImVtYWlsIjoiaGFyaWt1bWFyQGdtYWlsLmNvbSIsImlhdCI6MTcyMTc0MTk0OCwiZXhwIjoxNzIxNzQ1NTQ4fQ.VaSct9qlaIvD0qfPHFkJiE8-fhsNLl9GUiOtehm9-BE
+Content-Type: application/json
+
+{
+  "title": "Task two",
+  "description": "math task is submitted today."
+}
+
+
+//all tasks list 
+###
+curl -X GET http://localhost:4001/api/tasks/list \
+-H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2OWZiMjU0Mjc3YmY2NDhjMDk2MDU4NCIsImZpcnN0TmFtZSI6IkhhcmkiLCJsYXN0TmFtZSI6IkRvZSIsImVtYWlsIjoiaGFyaWt1bWFyQGdtYWlsLmNvbSIsImlhdCI6MTcyMTc0MTk0OCwiZXhwIjoxNzIxNzQ1NTQ4fQ.VaSct9qlaIvD0qfPHFkJiE8-fhsNLl9GUiOtehm9-BE" \
+-H "Content-Type: application/json"
+
+
+//all task lists
+###
+GET http://localhost:4001/api/tasks/list
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2OWZiMjU0Mjc3YmY2NDhjMDk2MDU4NCIsImZpcnN0TmFtZSI6IkhhcmkiLCJsYXN0TmFtZSI6IkRvZSIsImVtYWlsIjoiaGFyaWt1bWFyQGdtYWlsLmNvbSIsImlhdCI6MTcyMTc5NzU5MiwiZXhwIjoxNzIxODAxMTkyfQ.QOn7BpK0Qx5fBJ6lp4rlutuh6kjlHcOA4bLW2EVV2ps
+
+
+//gettask by id  (view for particular)
+###
+GET http://localhost:4001/api/tasks/669fb2ba277bf648c096058a
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2OWZiMjU0Mjc3YmY2NDhjMDk2MDU4NCIsImZpcnN0TmFtZSI6IkhhcmkiLCJsYXN0TmFtZSI6IkRvZSIsImVtYWlsIjoiaGFyaWt1bWFyQGdtYWlsLmNvbSIsImlhdCI6MTcyMTc0MTk0OCwiZXhwIjoxNzIxNzQ1NTQ4fQ.VaSct9qlaIvD0qfPHFkJiE8-fhsNLl9GUiOtehm9-BE
+
+
+
+//edit the tasks
+###
+PUT http://localhost:4001/api/tasks/update/669fb2ba277bf648c096058a
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2OWZiMjU0Mjc3YmY2NDhjMDk2MDU4NCIsImZpcnN0TmFtZSI6IkhhcmkiLCJsYXN0TmFtZSI6IkRvZSIsImVtYWlsIjoiaGFyaWt1bWFyQGdtYWlsLmNvbSIsImlhdCI6MTcyMTc0MTk0OCwiZXhwIjoxNzIxNzQ1NTQ4fQ.VaSct9qlaIvD0qfPHFkJiE8-fhsNLl9GUiOtehm9-BE
+Content-Type: application/json
+
+{
+  "title": "Updated Task3 to four",
+  "description": "Updated description carefully not geography today is historyfsdf."
+}
+
+
+
+
+//delete the tasks one by one 
+####
+DELETE http://localhost:4001/api/tasks/delete/669fb2ba277bf648c096058a
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2OWZiMjU0Mjc3YmY2NDhjMDk2MDU4NCIsImZpcnN0TmFtZSI6IkhhcmkiLCJsYXN0TmFtZSI6IkRvZSIsImVtYWlsIjoiaGFyaWt1bWFyQGdtYWlsLmNvbSIsImlhdCI6MTcyMTc0MTk0OCwiZXhwIjoxNzIxNzQ1NTQ4fQ.VaSct9qlaIvD0qfPHFkJiE8-fhsNLl9GUiOtehm9-BE
+
+//for delete all task atonce
+###
+DELETE http://localhost:4001/api/tasks/deleteAll
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2OWZiMjU0Mjc3YmY2NDhjMDk2MDU4NCIsImZpcnN0TmFtZSI6IkhhcmkiLCJsYXN0TmFtZSI6IkRvZSIsImVtYWlsIjoiaGFyaWt1bWFyQGdtYWlsLmNvbSIsImlhdCI6MTcyMTc0MTk0OCwiZXhwIjoxNzIxNzQ1NTQ4fQ.VaSct9qlaIvD0qfPHFkJiE8-fhsNLl9GUiOtehm9-BE
+
+
+
+
+### Update Task Status to "inProgress"
+PATCH http://localhost:4001/api/tasks/updateStatus/669fb296277bf648c0960588
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2OWZiMjU0Mjc3YmY2NDhjMDk2MDU4NCIsImZpcnN0TmFtZSI6IkhhcmkiLCJsYXN0TmFtZSI6IkRvZSIsImVtYWlsIjoiaGFyaWt1bWFyQGdtYWlsLmNvbSIsImlhdCI6MTcyMTc0MTk0OCwiZXhwIjoxNzIxNzQ1NTQ4fQ.VaSct9qlaIvD0qfPHFkJiE8-fhsNLl9GUiOtehm9-BE
+Content-Type: application/json
+
+{
+  "status": "inProgress"
+}
+
+
+### Update Task Status to "done"
+PATCH http://localhost:4001/api/tasks/updateStatus/669fb296277bf648c0960588
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2OWZiMjU0Mjc3YmY2NDhjMDk2MDU4NCIsImZpcnN0TmFtZSI6IkhhcmkiLCJsYXN0TmFtZSI6IkRvZSIsImVtYWlsIjoiaGFyaWt1bWFyQGdtYWlsLmNvbSIsImlhdCI6MTcyMTc0MTk0OCwiZXhwIjoxNzIxNzQ1NTQ4fQ.VaSct9qlaIvD0qfPHFkJiE8-fhsNLl9GUiOtehm9-BE
+Content-Type: application/json
+
+{
+  "status": "done"
+}
+
